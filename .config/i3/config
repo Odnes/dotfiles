@@ -45,7 +45,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-#bindsym $mod+l focus up
+bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -73,7 +73,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+l fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -180,17 +180,22 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift-gtk
+exec --no-startup-id firefox
+exec --no-startup-id zim
+exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
+exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/hexchat'
+
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 10%+"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 10%-"
 bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
-bindsym XF86TouchpadOn exec --no-startup-id "toggle_touchpad.sh"
+bindsym XF86TouchpadOn exec --no-startup-id "toggle-touchpad.sh"
 bindsym Print exec --no-startup-id "xfce4-screenshooter"
 
 bindsym Ctrl+Mod1+Left exec "xrandr --orientation left"
 bindsym Ctrl+Mod1+Up exec "xrandr --orientation normal"
 
-bindsym $Mod+f exec thunar
+bindsym $mod+t exec thunar
 
 bindsym $Mod+q focus Left
 bindsym $Mod+w focus Right
@@ -204,8 +209,9 @@ for_window [class="Firefox" floating] resize set 80 ppt 70 ppt, move position ce
 # bl-exit (bunsenlabs)
 for_window [class="WmanExit"] floating enable, move position center
 
+for_window [class="zim"] move scratchpad
 assign [class="Firefox-esr"] 1
-assign [class="Anki"] 2
+assign [class="mnemosyne"] 2
 assign [class="okular"] 2
 assign [class="Code"] 3
 assign [class="Thunar"] 4
@@ -213,8 +219,6 @@ assign [class="hexchat"] 5
 assign [class="discord"] 5
 assign [class="Brave-browser"] 6
 assign [class="Firefox Developer Edition"] 6
-
-
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4 #fcba03  

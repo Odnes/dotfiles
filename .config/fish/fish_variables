@@ -1,6 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:micro
 SETUVAR --export FZF_DEFAULT_COMMAND:find\x20\x2e
+SETUVAR --export NOTES:/media/odnes/data_partition/notes/
+SETUVAR --export RANGER_LOAD_DEFAULT_RC:FALSE
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
