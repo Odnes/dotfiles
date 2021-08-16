@@ -182,8 +182,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift-gtk
 exec --no-startup-id firefox
 exec --no-startup-id zim
-exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
-exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/hexchat'
+# exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
+# exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/hexchat'
 
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 10%+"
@@ -210,7 +210,7 @@ for_window [class="Firefox" floating] resize set 80 ppt 70 ppt, move position ce
 for_window [class="WmanExit"] floating enable, move position center
 
 for_window [class="zim"] move scratchpad
-assign [class="Firefox-esr"] 1
+# assign [class="Firefox-esr"] 1
 assign [class="mnemosyne"] 2
 assign [class="okular"] 2
 assign [class="Code"] 3

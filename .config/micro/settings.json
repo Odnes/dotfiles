@@ -1,0 +1,6 @@
+{
+    "*.py": {
+        "tabstospaces": true
+    },
+    "colorscheme": "geany"
+}

@@ -4,7 +4,7 @@
 #   qute://help/settings.html
 
 # Uncomment this to still load settings configured via autoconfig.yml
-# config.load_autoconfig()
+config.load_autoconfig()
 
 # Enable JavaScript.
 # Type: Bool
@@ -18,9 +18,8 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
-config.load_autoconfig()
 config.set('url.searchengines', {"DEFAULT": "https://lite.duckduckgo.com/lite?q={}"})
-config.set('url.start_pages', 'https://lite.duckduckgo.com/lite')
-config.set('url.default_page', 'https://lite.duckduckgo.com/lite')
-config.bind(',m', 'spawn mpv --ytdl-format=worst {url}')
-config.bind(',M', 'hint links spawn mpv --ytdl-format=worst {hint-url}')
+config.set('url.start_pages', 'about:blank')
+config.set('url.default_page', 'about:blank')
+config.bind(',m', 'spawn mpv --force-window=yes --ytdl-format=bestaudio {url}')
+config.bind(',M', 'hint links spawn mpv --force-window=yes --ytdl-format=bestaudio {hint-url}')

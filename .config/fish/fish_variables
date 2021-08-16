@@ -1,7 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ANDROIDAPI:27
+SETUVAR --export ANDROIDNDK:/home/odnes/bin/android-ndk-r21e
+SETUVAR --export ANDROIDNDKVER:r21e
+SETUVAR --export ANDROIDSDK:/home/odnes/bin/android-sdk-27
 SETUVAR --export EDITOR:micro
 SETUVAR --export FZF_DEFAULT_COMMAND:find\x20\x2e
+SETUVAR --export JAVA_HOME:/usr/lib/jvm/java\x2d1\x2e11\x2e0\x2dopenjdk\x2damd64
+SETUVAR --export NDKAPI:21
 SETUVAR --export NOTES:/media/odnes/data_partition/notes/
 SETUVAR --export RANGER_LOAD_DEFAULT_RC:FALSE
 SETUVAR __fish_init_2_39_8:\x1d

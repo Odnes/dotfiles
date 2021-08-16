@@ -1,0 +1,7 @@
+[build-menu]
+FT_02_LB=_Lint
+FT_02_CM=pyflakes "%f"
+FT_02_WD=
+EX_01_LB=Terminal here
+EX_01_CM=x-terminal-emulator
+EX_01_WD=%d
