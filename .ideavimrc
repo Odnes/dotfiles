@@ -1,0 +1,10 @@
+set clipboard+=unnamedplus
+set surround
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
+nnoremap L $
+nnoremap H ^
+noremap ; :
