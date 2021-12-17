@@ -1,5 +1,5 @@
 # This is a fish (login shell)-only modification
-set PATH $PATH $HOME/.local/bin $HOME/bin $JAVA_HOME/bin
+set PATH $PATH $HOME/.local/bin $HOME/bin $JAVA_HOME/bin $HOME/.jenv/bin
 #Default $SHELL value is set by "login" (see man; also see chsh), drawing
 # from /etc/passwd or /etc/default/useradd . Presumably, this is only for login shells. 
 # $PATH for non-login shells
@@ -8,3 +8,9 @@ set PATH $PATH $HOME/.local/bin $HOME/bin $JAVA_HOME/bin
 #set SHELL /bin/sh
 alias mc micro
 alias vi nvim
+# --no-rehash and >/dev/null added by me to silence errors
+# got away with it, apparently
+status --is-interactive; and source (jenv init --no-rehash -|psub > /dev/null)
+bind "\c\e[C" backward-word
+bind "\c\e[D" forward-word
+

@@ -54,3 +54,6 @@ if [ "$TERM" = "linux" ]; then
     printf "\e]PFffffff" # color15
 #   clear # removes artefacts but also removes /etc/{issue,motd}
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

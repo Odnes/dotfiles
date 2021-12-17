@@ -36,10 +36,11 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 set shell=bash
+set clipboard=unnamedplus
 set number
 set mouse=a
 set splitright
-
+set ignorecase
 
 " these don't work unless run after entry to editor
 "probably overriden by colorscheme
@@ -50,3 +51,9 @@ hi Function ctermfg=black
 "is applied ok when done manually, not from here though.
 set termguicolors
 colorscheme parchment
+
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
+nnoremap ; :

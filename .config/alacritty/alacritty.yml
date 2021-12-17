@@ -1,5 +1,6 @@
 env:
   TERM: xterm-256color
+  SHELL: /usr/bin/fish
 window:
   dimensions:
     columns: 80
@@ -25,7 +26,7 @@ font:
     family: monospace
   italic:
     family: monospace
-  size: 6.5
+  size: 6
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -97,7 +98,7 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
-  url:
+  hints:
     launcher: xdg-open
     modifiers: Control
 
@@ -156,7 +157,11 @@ live_config_reload: true
 # Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
 # (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
 # then run `showkey -a` to get the sequence associated to a key combination.
-#key_bindings:
+key_bindings:
+  - { key: K,        mods: Control,              chars: "\x1b[A",   mode: ~AppCursor  }
+  - { key: K,        mods: Control,              chars: "\x1bOA",   mode: AppCursor   }
+  - { key: J,        mods: Control,            chars: "\x1b[B",   mode: ~AppCursor  }
+  - { key: J,        mods: Control,            chars: "\x1bOB",   mode: AppCursor   }
 #  - { key: V,        mods: Control|Shift,    action: Paste               }
 #  - { key: C,        mods: Control|Shift,    action: Copy                }
 #  - { key: Paste,                   action: Paste                        }

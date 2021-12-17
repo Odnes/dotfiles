@@ -7,4 +7,14 @@ set hlsearch
 
 nnoremap L $
 nnoremap H ^
-noremap ; :
+vnoremap L $
+vnoremap H ^
+nnoremap ; :
+nmap <C-o> <Action>(Back)
+"nnoremap <C-f> :action Find<CR>
+
+" <CR> means 'press enter'
+nnoremap <C-S-n> :action ReopenClosedTab<CR> 
+nnoremap gi :action GotoImplementation<CR>
+nnoremap <C-w> :action CloseContent<CR>
+vnoremap <C-w> :action CloseContent<CR>
