@@ -187,7 +187,11 @@ exec --no-startup-id zim
 # exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
 # exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/hexchat'
 
-exec --no-startup-id sleep 3h && notify-send "Brewed some Beans. Next up: Squash bugs/read bad code" && sleep 2h 30m && notify-send "Squashed bugs/read bad code. Next up: Pick your pois\(s\)on" && sleep 2h 30m && notify-send  "Properly dizzy. Time for thesis. Check tickets first."
+set $nt "notify-send -u critical"
+exec --no-startup-id sleep 3h && \
+eval $($nt "Brewed some Beans. Next up: Squash bugs/read bad code") && \
+sleep 2h 30m && eval $($nt "Squashed bugs/read bad code. Next up: Pick your pois\(s\)on") && \
+sleep 2h 30m && eval $($nt "Properly dizzy. Time for thesis. Check tickets first.")
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 10%+"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 10%-"
