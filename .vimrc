@@ -26,6 +26,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'ajgrf/parchment'
 Plugin 'dense-analysis/ale'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive' "git
+Plugin 'tpope/vim-repeat' "makes repeat(.) register plugin keymaps
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,6 +39,7 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 set shell=bash
+
 set clipboard=unnamedplus
 set number
 set mouse=a
