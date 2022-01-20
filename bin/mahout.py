@@ -16,11 +16,14 @@ parser.add_argument('src', help='An arbitrary depth below this path,\
 parser.add_argument('dst',
                     help='Folder to place found application.yml_files into.')
 parser.add_argument('-z', '--zim', action='store_true', help="Append links to copied files in the folder's\
-                    respective zimfile. Ignore overwritten (updated) files.")
+                    respective zimfile_path. Ignore overwritten (updated) files.")
 
 args = parser.parse_args()
 src = os.path.abspath(args.src)
 dst = os.path.abspath(args.dst)
+zimfile_path = dst.rsplit('/', maxsplit=1)[0] + '/' +\
+              os.path.basename(dst) + '.txt'
+
 
 os.chdir(src)
 for yml_path in glob.glob('./com.*/**/config/*.yml', recursive=True):
@@ -31,20 +34,17 @@ for yml_path in glob.glob('./com.*/**/config/*.yml', recursive=True):
 
     try:
         if os.path.exists(dstfile_path):
-            print(dstfile_path + " overwritten. \n")
-            
-            zimfile = dst.rsplit('/', maxsplit=1)[0] + '/' +\
-                os.path.basename(dst) + '.txt'
-
-            # this might belong outside the loop, might also be
-            # non zim-specific
-            with open(zimfile, 'a') as zf:
-                zf.write("[[./" + backup_name + "]]\n")
+            print(dstfile_path + " overwritten. \n") 
         else:
             print("Creating backup: " + dstfile_path + '\n')
+           
+            # this might belong outside the loop, might also be
+            # non zim-specific
+            with open(zimfile_path, 'a') as zf:
+                zf.write("[[./" + backup_name + "]]\n")
 
         shutil.copy(yml_path, dstfile_path)
     except FileNotFoundError:
-        print("Destination folder doesn't exist")
+        print("Destination folder or zimfile doesn't exist")
 
 
