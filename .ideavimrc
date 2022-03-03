@@ -5,10 +5,10 @@ set ignorecase
 set smartcase
 set hlsearch
 
-nnoremap L $
-nnoremap H ^
-vnoremap L $
-vnoremap H ^
+"nnoremap L $
+"nnoremap H ^
+"vnoremap L $
+"vnoremap H ^
 nnoremap ; :
 nmap <C-o> <Action>(Back)
 "nnoremap <C-f> :action Find<CR>

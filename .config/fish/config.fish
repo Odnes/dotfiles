@@ -14,3 +14,4 @@ status --is-interactive; and source (jenv init --no-rehash -|psub > /dev/null)
 bind "\c\e[C" backward-word
 bind "\c\e[D" forward-word
 
+fortune fr
