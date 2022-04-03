@@ -177,6 +177,7 @@ hide_edge_borders smart
 
 exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-clipman
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore
@@ -184,6 +185,8 @@ exec --no-startup-id redshift-gtk
 # start disabled
 exec --no-startup-id firefox
 exec --no-startup-id zim
+exec --no-startup-id hexchat
+exec --no-startup-id earlyoom -m 5
 # exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
 # exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/hexchat'
 
@@ -199,6 +202,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 10%-"
 bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
 bindsym XF86TouchpadOn exec --no-startup-id "toggle-touchpad.sh"
 bindsym Print exec --no-startup-id "xfce4-screenshooter"
+
+#clipboard manager popup; alternatively bind xfce4-clipman-history
+bindsym $mod+c exec xfce4-popup-clipman
 
 bindsym Ctrl+$Mod+Left exec "xrandr --orientation left"
 bindsym Ctrl+$Mod+Up exec "xrandr --orientation normal"

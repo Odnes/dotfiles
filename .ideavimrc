@@ -1,20 +1,21 @@
-set clipboard+=unnamedplus
+source ~/.vimrc
 set surround
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
+set magic
 
-"nnoremap L $
-"nnoremap H ^
-"vnoremap L $
-"vnoremap H ^
-nnoremap ; :
-nmap <C-o> <Action>(Back)
+noremap ; :
+map <C-o> <Action>(Back)
+nmap <Tab> <Action>(Forward)
+nmap <C-i> <Action>(Forward)
 "nnoremap <C-f> :action Find<CR>
 
 " <CR> means 'press enter'
 nnoremap <C-S-n> :action ReopenClosedTab<CR> 
 nnoremap gi :action GotoImplementation<CR>
-nnoremap <C-w> :action CloseContent<CR>
-vnoremap <C-w> :action CloseContent<CR>
+"nnoremap <C-w> :action CloseContent<CR>
+"vnoremap <C-w> :action CloseContent<CR>
+
+

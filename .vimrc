@@ -24,6 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Pass the path to set the runtimepath properly.
   "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'ajgrf/parchment'
 Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-surround'
@@ -45,19 +46,25 @@ set number
 set mouse=a
 set splitright
 set ignorecase
+set magic "regex like grep; might be dfault anyway
+au Filetype gitcommit setl spell textwidth=72
+
+" Tabs to spaces
+set tabstop=4 shiftwidth=4 expandtab
 
 " these don't work unless run after entry to editor
 "probably overriden by colorscheme
-hi Normal ctermfg=black ctermbg=255 cterm=NONE
-hi Comment ctermfg=red ctermbg=NONE cterm=NONE
-hi Function ctermfg=black
+"hi Normal ctermfg=black ctermbg=255 cterm=NONE
+"hi Comment ctermfg=red ctermbg=NONE cterm=NONE
+"hi Function ctermfg=black
 
 "is applied ok when done manually, not from here though.
 set termguicolors
 colorscheme parchment
 
-nnoremap L $
-nnoremap H ^
-vnoremap L $
-vnoremap H ^
+"nnoremap L $
+"nnoremap H ^
+"vnoremap L $
+"vnoremap H ^
 nnoremap ; :
+nnoremap Y p
