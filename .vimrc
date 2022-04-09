@@ -48,9 +48,10 @@ set splitright
 set ignorecase
 set magic "regex like grep; might be dfault anyway
 au Filetype gitcommit setl spell textwidth=72
+au FileType hamlet setl sw=2 sts=2 et "something to do with haskell frontend template files
 
 " Tabs to spaces
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4 shiftwidth=4 expandtab textwidth=80
 
 " these don't work unless run after entry to editor
 "probably overriden by colorscheme
