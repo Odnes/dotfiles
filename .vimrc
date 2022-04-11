@@ -69,3 +69,4 @@ colorscheme parchment
 "vnoremap H ^
 nnoremap ; :
 nnoremap Y p
+nnoremap x "_x

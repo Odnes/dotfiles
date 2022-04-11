@@ -180,6 +180,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+# dunst is started as a D-Bus service (systemd dependency) from /usr/share/dbus-1/services
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift-gtk
 # start disabled

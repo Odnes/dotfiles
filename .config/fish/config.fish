@@ -6,8 +6,12 @@ set PATH $PATH $HOME/.local/bin $HOME/bin $JAVA_HOME/bin $HOME/.jenv/bin
 # is set at /etc/environment, though that should be kept user-agnostic.
 # For some reason, all terminal emulators except alacritty spawn $SHELL when the following fish config is set
 #set SHELL /bin/sh
+
 alias mc micro
 alias vi nvim
+# hope i don't forget about this
+alias man "man 1p"
+
 # --no-rehash and >/dev/null added by me to silence errors
 # got away with it, apparently
 status --is-interactive; and source (jenv init --no-rehash -|psub > /dev/null)
