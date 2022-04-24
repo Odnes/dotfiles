@@ -14,13 +14,21 @@ DATE=$(date +"%a %d/%m/%y %H:%M")
 append_to_log() {
     TMP="/tmp/heychief_tmp"
     echo "$DATE"  >> "$logfile"
-    nvim "$TMP" 
+    # should disable this when calling from interactive shell
+    # kludge to fit current zim line width at hearth
+    alacritty -e nvim -c "set textwidth=63" "$TMP" 
      
-    # non POSIX 
-    # Master sed by abusing it for editing first, be sorry later
-    sed --in-place "\$s/\$/ \- $(cat $TMP)/" "$logfile"
+    
+    
+    if [ -n "$(cat $TMP)" ] # non-zero
+    then
+        # non POSIX 
+        # Master sed by abusing it for editing first, be sorry later
+        sed --in-place "\$s/\$/ \- $(cat $TMP)/" "$logfile"
+    fi
     rm -f "$TMP"
 }
+
 skip_log(){
     echo "$DATE" | xargs echo >> "$logfile"
 }

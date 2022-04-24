@@ -16,5 +16,7 @@
     <outline title="Crafting Privacy" text="Crafting Privacy" description="Crafting Privacy" type="rss" id="yobpasr" sortColumn="time" xmlUrl="https://blog.standardnotes.com/feed.rss" htmlUrl="https://blog.standardnotes.com/standardnotes.com" updateInterval="-1" collapsed="true"/>
     <outline title="macwright.com" text="macwright.com" description="macwright.com" type="rss" id="deiipvd" sortColumn="time" xmlUrl="https://macwright.com/rss.xml" htmlUrl="https://macwright.com" updateInterval="-1" collapsed="true"/>
     <outline title="Tales From The Dork Web" text="Tales From The Dork Web" description="Tales From The Dork Web" type="rss" id="wifmiqo" sortColumn="time" xmlUrl="https://thedorkweb.substack.com/feed" htmlUrl="https://thedorkweb.substack.com" updateInterval="-1" collapsed="true"/>
+    <outline title="Talk Python To Me" text="Talk Python To Me" description="Talk Python To Me" type="rss" id="bmcbdqi" sortColumn="time" xmlUrl="https://talkpython.fm/episodes/rss" htmlUrl="https://talkpython.fm/" updateInterval="-1" collapsed="true"/>
+    <outline title="HearFeel" text="HearFeel" description="HearFeel" type="rss" id="vepismi" sortColumn="time" xmlUrl="https://hearfeel.co.uk/rss" htmlUrl="https://www.hearfeel.co.uk" updateInterval="-1" collapsed="true"/>
   </body>
 </opml>
