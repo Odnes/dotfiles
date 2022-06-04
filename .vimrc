@@ -30,12 +30,13 @@ Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive' "git
 Plugin 'tpope/vim-repeat' "makes repeat(.) register plugin keymaps
+Plugin 'junegunn/fzf'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.5, 'relative': v:true, 'yoffset': 1.0, 'border': 'none' } }
 
 
 " Put your non-Plugin stuff after this line
@@ -70,3 +71,4 @@ colorscheme parchment
 nnoremap ; :
 nnoremap Y p
 nnoremap x "_x
+nnoremap <C-p> :FZF<cr>

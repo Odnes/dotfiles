@@ -9,7 +9,10 @@ set PATH $PATH $HOME/.local/bin $HOME/bin $JAVA_HOME/bin $HOME/.jenv/bin
 
 alias mc micro
 alias vi nvim
-# hope i don't forget about this
+alias recent "ls -ltch"
+
+alias ggrep "git grep -En"
+alias gg "git grep -En"
 
 # --no-rehash and >/dev/null added by me to silence errors
 # got away with it, apparently
