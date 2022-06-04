@@ -3,10 +3,11 @@
 import time
 import sys
 import select
-
+import subprocess
 
 def start_session(pomo, rest, streak=0):
     # TODO add leading zero to single digit seconds
+    # TODO actually use rest sessions
     for minute in range(pomo_duration-1, -1, -1):
         for second in range(60, 0, -1):
             # it's slow af as it is
@@ -28,9 +29,15 @@ def start_session(pomo, rest, streak=0):
                         value = input()
     streak += 1
     sys.stdout.write(" Finished! Go again? (y/n) ")
-    again = input().rstrip()
-    if again == 'y':
-        start_session(pomo, rest, streak)
+    try:
+        subprocess.run(['dunstify', '-u', 'critical', 'Slomo',
+                       f"Session finished. Current Streak: {streak}"])
+    except Exception: 
+        print('dunstify unavailable. notification not sent.')
+    finally:
+        again = input().rstrip()
+        if again == 'y':
+            start_session(pomo, rest, streak)
 
 
 pomo_duration = input('Enter pomo duration: ')

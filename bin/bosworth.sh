@@ -3,16 +3,16 @@
 # pipefail to be POSIX in next revision
 set -eou pipefail
 
-if [ ! -f "$NOTES/heychief.txt" ]
+if [ ! -f "$NOTES/bosworth.txt" ]
 then
-	touch "$NOTES/heychief.txt" 
+	touch "$NOTES/bosworth.txt" 
 fi
 
-logfile="$NOTES/heychief.txt" 
+logfile="$NOTES/bosworth.txt" 
 DATE=$(date +"%a %d/%m/%y %H:%M")
 
 append_to_log() {
-    TMP="/tmp/heychief_tmp"
+    TMP="/tmp/bosworth_tmp"
     echo "$DATE"  >> "$logfile"
     # should disable this when calling from interactive shell
     # kludge to fit current zim line width at hearth
@@ -33,7 +33,8 @@ skip_log(){
     echo "$DATE" | xargs echo >> "$logfile"
 }
 
-ACTION=$(dunstify -u critical --action="default,Append" --action="skip,Skip" "heychief" "How you doin")
+ACTION=$(dunstify -u critical --action="default,Append" --action="skip,Skip"
+"bosworth.sh" "Hey chief! How you doin'?")
 
 case "$ACTION" in
 "default")
