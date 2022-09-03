@@ -5,6 +5,7 @@ import sys
 import select
 import subprocess
 
+
 def start_session(pomo, rest, streak=0):
     # TODO add leading zero to single digit seconds
     # TODO actually use rest sessions
@@ -22,11 +23,22 @@ def start_session(pomo, rest, streak=0):
             if pause:
                 # needed friggin rightstrip for EOL
                 value = sys.stdin.readline().rstrip()
-                if value == "":
+                if value == '':
+                    try:
+                        subprocess.run(['dunstify', '-u', 'critical', 'Slomo',
+                                        "Session was paused."])
+                    except Exception: 
+                        print('dunstify unavailable. notification not sent.')
+                    
                     value = 'paused'
                     sys.stdout.write("      Paused. Press enter to resume.")
                     while value != '':
                         value = input()
+                elif value == 'a':
+                    minute += 1
+                elif value == 'r':
+                    start_session(pomo, rest, streak)
+
     streak += 1
     sys.stdout.write(" Finished! Go again? (y/n) ")
     try:
@@ -34,10 +46,9 @@ def start_session(pomo, rest, streak=0):
                        f"Session finished. Current Streak: {streak}"])
     except Exception: 
         print('dunstify unavailable. notification not sent.')
-    finally:
-        again = input().rstrip()
-        if again == 'y':
-            start_session(pomo, rest, streak)
+    again = input().rstrip()
+    if again == 'y':
+        start_session(pomo, rest, streak)
 
 
 pomo_duration = input('Enter pomo duration: ')
