@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Odysseas Neslechanidis
+	email = odnes@tiptheiceberg.com
+# Please adapt and uncomment the following lines:
+#	name = Odysseas Neslechanidis
+#	email = odnes@tiptheiceberg.com
+[credential]
+	helper = store
+[color "grep"]
+    filename = black bold
+
