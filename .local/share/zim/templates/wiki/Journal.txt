@@ -1,7 +1,7 @@
 [% IF journal_plugin.page_type == 'day' and strftime("%A", journal_plugin.date) == 'Saturday' or strftime("%A", journal_plugin.date) == 'Sunday' -%]
 ======= [% strftime("%A %d %b %Y", journal_plugin.date) %]  =======
 === Mon ===
-[ ] 
+
 
 === Tue ===
 
@@ -38,3 +38,4 @@
 [% gettext("Created") %] [% strftime("%A %d %B %Y") %]
 
 [%- END %]
+

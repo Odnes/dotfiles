@@ -18,4 +18,4 @@ nnoremap gi :action GotoImplementation<CR>
 "nnoremap <C-w> :action CloseContent<CR>
 "vnoremap <C-w> :action CloseContent<CR>
 
-
+nnoremap <C-p> :action SearchEverywhere<CR>

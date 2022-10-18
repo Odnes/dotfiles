@@ -26,6 +26,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'ajgrf/parchment'
+" works with lsp server-backed plugins like pyright:
+" let g:ale_completion_enabled = 1
 Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive' "git
@@ -38,6 +40,7 @@ filetype plugin indent on    " required
 "filetype plugin on
 let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.5, 'relative': v:true, 'yoffset': 1.0, 'border': 'none' } }
 
+:command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 " Put your non-Plugin stuff after this line
 set shell=bash
@@ -72,3 +75,9 @@ nnoremap ; :
 nnoremap Y p
 nnoremap x "_x
 nnoremap <C-p> :FZF<cr>
+nnoremap gb :ls<cr>:b<Space>
+
+" <C-5>,C-7> respectively. View what keycodes they produce by
+" Inputting them after <C-v> in insert mode.
+nnoremap <C-]> :bprevious<cr>
+nnoremap <C-_> :bnext<cr>
