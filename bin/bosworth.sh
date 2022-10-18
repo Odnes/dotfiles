@@ -33,7 +33,8 @@ skip_log(){
     echo "$DATE" | xargs echo >> "$logfile"
 }
 
-ACTION=$(dunstify -u critical --action="default,Append" --action="skip,Skip" \
+# --action="skip,Skip"
+ACTION=$(dunstify -u critical --action="default,Append"  \
          "bosworth.sh" "Hey chief! How you doin?")
 
 case "$ACTION" in

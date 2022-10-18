@@ -1,4 +1,5 @@
-# This is a fish (login shell)-only modification
+# This is a login shell modification, meaning it affects all shells for this
+# user (as environment is derived from this user's login shell, which is fish)
 set PATH $HOME/bin $PATH $HOME/.local/bin $JAVA_HOME/bin $HOME/.jenv/bin
 #Default $SHELL value is set by "login" (see man; also see chsh), drawing
 # from /etc/passwd or /etc/default/useradd . Presumably, this is only for login shells. 
