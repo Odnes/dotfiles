@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cmd=$1 # first arg
+if [ "$PWD" = "/home/odnes/Documents/tti_articles" ] && [ "$cmd" = "push" ]; then
+    # put up a /etc/sudoers.d/wg_up file using visudo, with the following contents:
+    # odnes    ALL=(root) NOPASSWD: /home/odnes/bin/tti_push.py
+    exec sudo ~/bin/tti_push.py
+else
+    exec /usr/bin/git "$@"
+fi
