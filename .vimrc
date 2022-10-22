@@ -24,7 +24,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Pass the path to set the runtimepath properly.
   "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-Plugin 'neovimhaskell/haskell-vim'
+
+" Syntax highlighting. Inbuilt lexical-level support is available for most languages. See
+" available at :setfiletype
+  
 Plugin 'ajgrf/parchment'
 " works with lsp server-backed plugins like pyright:
 " let g:ale_completion_enabled = 1
@@ -77,7 +80,6 @@ nnoremap x "_x
 nnoremap <C-p> :FZF<cr>
 nnoremap gb :ls<cr>:b<Space>
 
-" <C-5>,C-7> respectively. View what keycodes they produce by
-" Inputting them after <C-v> in insert mode.
-nnoremap <C-]> :bprevious<cr>
-nnoremap <C-_> :bnext<cr>
+"also check vim-unimpaired
+nnoremap [b :bprevious<cr>
+nnoremap ]b :bnext<cr>
