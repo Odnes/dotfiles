@@ -187,7 +187,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id firefox
 exec --no-startup-id alacritty -e ~/bin/slomo.py
 exec --no-startup-id zim
-exec --no-startup-id hexchat
+#exec --no-startup-id hexchat
 exec --no-startup-id earlyoom -m 5
 # exec --no-startup-id anki
 # exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
