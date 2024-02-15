@@ -1,51 +1,26 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
+" default Plug directory ~/.vim/plugged
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-  "Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-  " Plugin 'L9'
-" Git plugin not hosted on GitHub
-  "Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-  "Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-  "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-
-" Syntax highlighting. Inbuilt lexical-level support is available for most languages. See
-" available at :setfiletype
-  
-Plugin 'ajgrf/parchment'
-" works with lsp server-backed plugins like pyright:
+Plug 'ajgrf/parchment'
+" works with lsp server-backed Plugs like pyright:
 " let g:ale_completion_enabled = 1
-Plugin 'dense-analysis/ale'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive' "git
-Plugin 'tpope/vim-repeat' "makes repeat(.) register plugin keymaps
-Plugin 'junegunn/fzf'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive' "git
+Plug 'tpope/vim-repeat' "makes repeat(.) register plugin keymaps
+Plug 'junegunn/fzf'
+Plug 'leafOfTree/vim-matchtag'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+call plug#end()
+
 let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.5, 'relative': v:true, 'yoffset': 1.0, 'border': 'none' } }
 
 :command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 " Put your non-Plugin stuff after this line
+
 set shell=bash
 
 set clipboard=unnamedplus

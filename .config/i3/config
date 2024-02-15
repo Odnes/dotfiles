@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty #i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -185,11 +185,12 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift-gtk
 # start disabled
 exec --no-startup-id firefox
-exec --no-startup-id alacritty -e ~/bin/slomo.py
+# exec --no-startup-id alacritty -e ~/bin/slomo.py
 exec --no-startup-id zim
 #exec --no-startup-id hexchat
 exec --no-startup-id earlyoom -m 5
-# exec --no-startup-id anki
+exec --no-startup-id anki
+#exec --no-startup-id code-oss
 # exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/mnemosyne'
 # exec --no-startup-id i3-msg 'workspace $ws5; exec /usr/bin/hexchat'
 
@@ -226,15 +227,19 @@ for_window [class="Firefox" floating] resize set 80 ppt 70 ppt, move position ce
 # bl-exit (bunsenlabs)
 for_window [class="WmanExit"] floating enable, move position center
 
+# use xprop to find WMClass
 # for_window [class="Zim"] move scratchpad # it works, but it hides search floating window
 # assign [class="Firefox-esr"] 1
 assign [class="okular"] 3 
 #assign [class="jetbrains-idea"] 2 #floating windows broken, also
-#assign [class="Code"] 2
+assign [class="codium"] 2
 assign [class="Thunar"] 4
 assign [class="hexchat"] 5
 assign [class="discord"] 5
 assign [class="Brave-browser"] 6
+#assign [class="Chromium"] 6
+assign [class="Signal"] 6
+
 assign [class="Firefox Developer Edition"] 6
 assign [class="postman"] 6
 

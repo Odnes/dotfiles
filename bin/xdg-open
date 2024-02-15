@@ -1,0 +1,15 @@
+###!/bin/sh
+
+# substitutes :* in first argument with nothing
+case "${1%%:*}" in
+	http|https|*.html)
+		exec firefox --url "$1"
+		;;
+	*.pdf)
+		exec evince "$1"
+		;;
+	*)
+		exec /usr/bin/xdg-open "$@"
+		;;
+esac
+
